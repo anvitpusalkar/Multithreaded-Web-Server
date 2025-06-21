@@ -1,6 +1,7 @@
 This project implements a multi-threaded C server for evaluating mathematical expressions and a corresponding multi-threaded C clientthat concurrently sends expressions read from a file to the server.
 
 Features
+
 Server (server.c):
 
 Multi-threaded Architecture: Utilizes a fixed-size thread pool (NUM_WORKER_THREADS = 5) for concurrent client connection handling.
