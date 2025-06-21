@@ -4,7 +4,7 @@ Features
 
 Server (server.c):
 
-Multi-threaded Architecture: Utilizes a fixed-size thread pool (NUM_WORKER_THREADS = 5) for concurrent client connection handling.
+Multi-threaded Architecture: Utilizes a fixed-size thread pool (WORKER_THREADS = 5) for concurrent client connection handling.
 
 Producer-Consumer Pattern: A main thread accepts connections and enqueues client sockets into a thread-safe queue. Worker threads dequeue and process requests.
 
@@ -16,7 +16,7 @@ Graceful Shutdown: Ensures proper termination of all worker threads before serve
 
 Client (client.c):
 
-Multi-threaded Architecture: Employs a client-side thread pool (NUM_CLIENT_THREADS = 5) to send multiple expressions concurrently.
+Multi-threaded Architecture: Employs a client-side thread pool (CLIENT_THREADS = 5) to send multiple expressions concurrently.
 
 Producer-Consumer Pattern: A main thread reads expressions from expressions.txt and enqueues them. Client worker threads dequeue, connect to the server, send expressions, and receive results.
 
@@ -30,7 +30,7 @@ Automates compilation of client and server executables.
 
 Includes a clean target for removing generated files.
 
-Orchestration Script (run_test.sh):
+Orchestration Script (test.sh):
 
 Automates the build process via make.
 
@@ -56,9 +56,9 @@ WSL (Windows Subsystem for Linux) or a Linux environment: Required for POSIX-spe
 Setup Instructions
 Clone or Download: Place all project files (server.c, client.c, tinyexpr.c, tinyexpr.h, Makefile, run_test.sh) into a single directory.
 
-Make run_test.sh Executable:
+Make test.sh Executable:
 
-chmod +x run_test.sh
+chmod +x test.sh
 
 How to Run
 Open your WSL Debian terminal (or a Linux terminal).
@@ -67,7 +67,7 @@ Navigate to your project directory.
 
 Execute the test script:
 
-./run_test.sh
+./test.sh
 
 Expected Output:
 The script compiles programs, starts the server in the background, and runs the client. Terminal output will primarily display messages from the client.
@@ -80,4 +80,4 @@ Project Structure
 ├── tinyexpr.c
 ├── tinyexpr.h
 ├── expressions.txt
-└── run_test.sh
+└── test.sh
