@@ -60,19 +60,6 @@ Make run_test.sh Executable:
 
 chmod +x run_test.sh
 
-Create expressions.txt:
-Create a file named expressions.txt in the project directory. Each line must contain one mathematical expression.
-Example expressions.txt content:
-
-1 + 1
-2 * 3.5
-(5 - 2) * 4
-sin(0) + cos(0)
-log10(100)
-(10 + 20) / 5
-
-For performance testing, it is recommended to use a large number of expressions (e.g., 50,000 to 100,000).
-
 How to Run
 Open your WSL Debian terminal (or a Linux terminal).
 
